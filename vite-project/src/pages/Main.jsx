@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import './Main.css'
 import CreatorCard from '../components/CreatorCard'
 
 const Main = ({creator}) => {
@@ -11,10 +12,13 @@ const Main = ({creator}) => {
         <Link to="/addcreator">Add creator</Link>
       </div>        
       
-      
-      {creator.map((creator,index) => (
-        <CreatorCard creator={creator} index={index}/>
-      ))}
+      <div className="creator-container">
+
+        {creator.map((creator,index) => (
+          <CreatorCard creator={creator} index={index}/>
+        ))}
+        
+      </div>
         
       
     </div>
