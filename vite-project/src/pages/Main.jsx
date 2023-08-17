@@ -15,7 +15,9 @@ const Main = ({creator}) => {
       <div className="creator-container">
 
         {creator.map((creator,index) => (
-          <CreatorCard creator={creator} index={index}/>
+          // <div key={index}>
+          <CreatorCard creator={creator} key={index}/>
+          // </div>
         ))}
         
       </div>
