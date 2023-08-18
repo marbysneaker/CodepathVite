@@ -18,24 +18,45 @@ function App() {
   const [description, setDescription] = useState('')
   const [imageURL, setImageURL] = useState('')
   const [creator, setCreator] = useState([])
+  const [editId, setEditId] = useState(null)
+
+  const handleDeleteCreator = async (id) => {
+    const {data, error} = await supabase
+    .from('creators')
+    .delete()
+    .match({id: id})
+    console.log(data)
+  }
+  const handleEditCreator = async (id) => {
+    const {data, error} = await supabase
+    .from('creators')
+    .update({name: name, url: url, description: description, imageURL: imageURL})
+    .match({id: id})
+    console.log(data)
+  }
+  const setEditIdHandler = (id) => {
+    setEditId(id)
+  }
+
+
 
 
   let element= useRoutes([
     {
       path: "/",
-      element: <Main creator={creator}/>,
+      element: <Main creator={creator} handleDeleteCreator={handleDeleteCreator} setEditIdHandler={setEditIdHandler} setEditId={setEditId}/>,
     },{
         path: "/addcreator",
-        element: <Addcreator name={name}/>,
+        element: <Addcreator name={name} setName={setName} url={url} setUrl={setUrl} description={description} setDescription={setDescription} imageURL={imageURL} setImageURL={setImageURL} />,
       },
       
       {
-        path:"editcreator",
-        element: <Editcreator />,
+        path:"/editcreator",
+        element: <Editcreator editId={editId} handleEditCreator={handleEditCreator} name={name} setName={setName} url={url} setUrl={setUrl} description={description} setDescription={setDescription} imageURL={imageURL} setImageURL={setImageURL}/>,
   
       },
       {
-        path:"showcreator",
+        path:"/showcreators",
         element: <Showcreators />,
   
       }
@@ -45,6 +66,7 @@ function App() {
 
   ])
 
+  
 
 
   
