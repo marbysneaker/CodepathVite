@@ -57,7 +57,7 @@ function App() {
       },
       {
         path:"/showcreators",
-        element: <Showcreators />,
+        element: <Showcreators creator={creator} />,
   
       }
       

@@ -1,9 +1,12 @@
 import React from 'react'
-
-const Showcreators = () => {
+import CreatorCard from '../components/CreatorCard'
+const Showcreators = (props) => {
+  const {creator} = props
   return (
-    <div>
-      Show creators
+    <div className="showcreators">
+      {creator.map((creator,index) => (
+        <CreatorCard key={index} creator={creator}/>
+          ))}
     </div>
   )
 }

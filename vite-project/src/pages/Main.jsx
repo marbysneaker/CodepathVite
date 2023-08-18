@@ -19,7 +19,7 @@ const Main = (props) => {
       
       <div className="creator-container">
 
-        {creator.map((creator,index) => (
+        {creator.slice(0,5).map((creator,index) => (
           
           <CreatorCard creator={creator} key={index} handleDeleteCreator={handleDeleteCreator} setEditId={setEditId}/>
           
