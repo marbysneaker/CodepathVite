@@ -1,5 +1,25 @@
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height:100%;
+    width:100%;
+    border: 1px solid black;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
 .creator-container {
     border: 1px solid black;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
 }
+/* .creator-container .creatorcard {}
+.creator-container .creatorcard:nth-child(4){
+    grid-column: 1/ span 2;
+}
+.creator-container .creatorcard:nth-child(5){
+    grid-column: 2/ span 2;
+    
+} */

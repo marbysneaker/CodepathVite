@@ -4,7 +4,7 @@ import './Main.css'
 import CreatorCard from '../components/CreatorCard'
 
 const Main = (props) => {
-  const {creator, handleDeleteCreator, setEditId} = props
+  const {creator, handleDeleteCreator, setEditId, handleViewCreator, setViewIdHandler} = props
   
   return (
     <div className='main-container'>
@@ -21,7 +21,7 @@ const Main = (props) => {
 
         {creator.slice(0,5).map((creator,index) => (
           
-          <CreatorCard creator={creator} key={index} handleDeleteCreator={handleDeleteCreator} setEditId={setEditId}/>
+          <CreatorCard creator={creator} key={index} handleDeleteCreator={handleDeleteCreator} setEditId={setEditId} handleViewCreator={handleViewCreator} setViewIdHandler={setViewIdHandler}/>
           
         ))}
         

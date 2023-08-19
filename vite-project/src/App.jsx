@@ -5,6 +5,7 @@ import Editcreator from './pages/Editcreator';
 import Showcreators from './pages/Showcreators';
 import CreatorCard from './components/CreatorCard';
 import Main from './pages/Main';
+import Viewcreator from './pages/Viewcreator';
 import { useRoutes } from "react-router-dom";
 import {supabase} from "./client.js"
 
@@ -19,6 +20,8 @@ function App() {
   const [imageURL, setImageURL] = useState('')
   const [creator, setCreator] = useState([])
   const [editId, setEditId] = useState(null)
+  const [viewcreator, setViewcreator] = useState(null)
+  const [viewId, setViewId] = useState(null)
 
   const handleDeleteCreator = async (id) => {
     const {data, error} = await supabase
@@ -37,14 +40,17 @@ function App() {
   const setEditIdHandler = (id) => {
     setEditId(id)
   }
-
+  const setViewIdHandler = (id) => {
+    setViewId(id);
+  }
+   
 
 
 
   let element= useRoutes([
     {
       path: "/",
-      element: <Main creator={creator} handleDeleteCreator={handleDeleteCreator} setEditIdHandler={setEditIdHandler} setEditId={setEditId}/>,
+      element: <Main creator={creator} handleDeleteCreator={handleDeleteCreator} setEditIdHandler={setEditIdHandler} setEditId={setEditId}  setViewIdHandler={setViewIdHandler}/>,
     },{
         path: "/addcreator",
         element: <Addcreator name={name} setName={setName} url={url} setUrl={setUrl} description={description} setDescription={setDescription} imageURL={imageURL} setImageURL={setImageURL} />,
@@ -60,6 +66,12 @@ function App() {
         element: <Showcreators creator={creator} />,
   
       }
+      ,
+      {
+        path:"/viewcreator",
+        element: <Viewcreator viewId={viewId} />,
+  
+      }
       
    
     
@@ -70,9 +82,10 @@ function App() {
 
 
   
-useEffect (()=>{
-  fetchData();
-})
+useEffect(() => {
+  fetchData()
+}, [])
+
 
 const fetchData = async () => {
      const  {data, error} = await supabase
