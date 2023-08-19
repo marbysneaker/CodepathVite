@@ -5,16 +5,26 @@
     justify-content: center;
     height:100%;
     width:100%;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     margin: 0 !important;
     padding: 0 !important;
 }
 
 .creator-container {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
+.main-buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid black; */
+    width: 20%;
+    height: 10%;
+    text-decoration: none;
+   
 /* .creator-container .creatorcard {}
 .creator-container .creatorcard:nth-child(4){
     grid-column: 1/ span 2;

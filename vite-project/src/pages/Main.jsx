@@ -2,24 +2,27 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './Main.css'
 import CreatorCard from '../components/CreatorCard'
+import { Button } from '@mui/material'
 
 const Main = (props) => {
   const {creator, handleDeleteCreator, setEditId, handleViewCreator, setViewIdHandler} = props
+
+  const lastFiveReversed = creator.slice(-6).reverse();
+
   
   return (
     <div className='main-container'>
       <h1>CREATORVERSE</h1>
 
-      <div className='buttons'>
-        <Link to="/addcreator">Add creator</Link>
-      </div>
-      <div className='buttons'>
-        <Link to="/showcreators">Show creators</Link>"  
+      <div className='main-buttons'>
+        <Link to="/addcreator"><Button sx={{width:150}} variant="contained">Add creator</Button> </Link>
+      
+        <Link to="/showcreators"><Button sx={{width:150}} variant="contained">Show creators</Button></Link>"  
       </div>     
       
       <div className="creator-container">
 
-        {creator.slice(0,5).map((creator,index) => (
+        {lastFiveReversed.map((creator,index) => (
           
           <CreatorCard creator={creator} key={index} handleDeleteCreator={handleDeleteCreator} setEditId={setEditId} handleViewCreator={handleViewCreator} setViewIdHandler={setViewIdHandler}/>
           

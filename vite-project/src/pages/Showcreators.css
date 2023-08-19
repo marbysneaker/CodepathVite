@@ -26,3 +26,15 @@
     text-align: center;
     color: #fff;
 }
+.home-button a {
+    text-decoration: none;
+   
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    margin: auto;
+    font-size: 1.5em;
+}

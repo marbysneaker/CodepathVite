@@ -16,6 +16,7 @@ const CreatorCard = (props) => {
     <div className='creatorcard'>
       <h2>{creator.name}</h2>
       <img src={creator.imageURL} alt="" />
+      <a href={creator.url}>{creator.url}</a>
       <div className="buttons">
       <Link to="/editcreator"><Button variant="contained" onClick={()=>setEditId(creator.id)}>Edit </Button></Link>
       <Button variant="contained" onClick={()=>handleDeleteCreator(creator.id)}>Delete</Button>

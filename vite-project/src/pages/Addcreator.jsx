@@ -15,6 +15,7 @@ const Addcreator = (props) => {
       {name: name, url: url, description: description, imageURL: imageURL}
     ])
     console.log(data)
+    alert('Creator added')
     setName('')
     setUrl('')
     setDescription('')
@@ -35,10 +36,10 @@ const Addcreator = (props) => {
       
       </div>
       <div className="input-container">
-        <Texfield fullWidth id="standard-basic" label="Name" onChange={e=>setName(e.target.value)}/>
-        <Texfield id="standard-basic" label="URL" onChange={e=>setUrl(e.target.value)}/> 
-        <Texfield multiline rows={4} maxRows={6} id="standard-basic" label="Description" onChange={e=>setDescription(e.target.value)} />
-        <Texfield id="standard-basic" label="ImageURL" onChange={e=>setImageURL(e.target.value)} />
+        <Texfield value={name}fullWidth id="standard-basic" label="Name" onChange={e=>setName(e.target.value)}/>
+        <Texfield value={url} id="standard-basic" label="URL" onChange={e=>setUrl(e.target.value)}/> 
+        <Texfield value={description} id="standard-basic" label="Description" onChange={e=>setDescription(e.target.value)} />
+        <Texfield value={imageURL}id="standard-basic" label="ImageURL" onChange={e=>setImageURL(e.target.value)} />
         <Button variant="contained" onClick={()=>handleAddCreator()}>Add creator</Button>
       </div>
       

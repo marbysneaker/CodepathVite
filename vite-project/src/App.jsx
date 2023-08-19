@@ -8,6 +8,7 @@ import Main from './pages/Main';
 import Viewcreator from './pages/Viewcreator';
 import { useRoutes } from "react-router-dom";
 import {supabase} from "./client.js"
+import { useReducer } from 'react';
 
 import './App.css'
 
@@ -22,6 +23,7 @@ function App() {
   const [editId, setEditId] = useState(null)
   const [viewcreator, setViewcreator] = useState(null)
   const [viewId, setViewId] = useState(null)
+  const [forceRender, setForceRender] = useState(false)
 
   const handleDeleteCreator = async (id) => {
     const {data, error} = await supabase
@@ -29,6 +31,12 @@ function App() {
     .delete()
     .match({id: id})
     console.log(data)
+    renderMatches()
+
+  }
+  const renderMatches = () => {
+    setForceRender(!forceRender)
+    
   }
   const handleEditCreator = async (id) => {
     const {data, error} = await supabase
@@ -63,7 +71,7 @@ function App() {
       },
       {
         path:"/showcreators",
-        element: <Showcreators creator={creator} />,
+        element: <Showcreators creator={creator} handleDeleteCreator={handleDeleteCreator} setEditIdHandler={setEditIdHandler} setEditId={setEditId}  setViewIdHandler={setViewIdHandler}/>,
   
       }
       ,
