@@ -32,7 +32,7 @@ const Addcreator = (props) => {
         <Link to="/">Home</Link>
       </div>
       <div> 
-        Add creator
+        <h1>Add Creator</h1>
       
       </div>
       <div className="input-container">

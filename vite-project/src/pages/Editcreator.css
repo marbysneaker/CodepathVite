@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: center;
     height: 80vh;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 .input-container {
     display: flex;
@@ -13,7 +13,7 @@
     justify-content: center;
     height: 80%;
     width: 80%;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 .input-container div, a{
     display: flex;

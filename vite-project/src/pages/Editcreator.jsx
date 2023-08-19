@@ -37,7 +37,7 @@ const Editcreator = (props) => {
 
     
     <div> 
-      Edit Creator
+      <h1>Edit Creator</h1>
      
     </div>
     <div className="input-container">
