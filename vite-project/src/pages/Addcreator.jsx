@@ -26,20 +26,23 @@ const Addcreator = (props) => {
     
   return (
     <div className="Addcreator">
-    
-    <div> 
-      Add creator
-     
-    </div>
-    <div className="input-container">
-      <Texfield fullWidth id="standard-basic" label="Name" onChange={e=>setName(e.target.value)}/>
-      <Texfield id="standard-basic" label="URL" onChange={e=>setUrl(e.target.value)}/> 
-      <Texfield id="standard-basic" label="Description" onChange={e=>setDescription(e.target.value)} />
-      <Texfield id="standard-basic" label="ImageURL" onChange={e=>setImageURL(e.target.value)} />
-       <Link to="/"><Button variant="contained" onClick={()=>handleAddCreator()}>Add creator</Button></Link>
-    </div>
-    
-    </div>
+      
+      <div className="home-button">
+        <Link to="/">Home</Link>
+      </div>
+      <div> 
+        Add creator
+      
+      </div>
+      <div className="input-container">
+        <Texfield fullWidth id="standard-basic" label="Name" onChange={e=>setName(e.target.value)}/>
+        <Texfield id="standard-basic" label="URL" onChange={e=>setUrl(e.target.value)}/> 
+        <Texfield multiline rows={4} maxRows={6} id="standard-basic" label="Description" onChange={e=>setDescription(e.target.value)} />
+        <Texfield id="standard-basic" label="ImageURL" onChange={e=>setImageURL(e.target.value)} />
+        <Button variant="contained" onClick={()=>handleAddCreator()}>Add creator</Button>
+      </div>
+      
+      </div>
 
   )
 }

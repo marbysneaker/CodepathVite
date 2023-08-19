@@ -30,6 +30,11 @@ const Editcreator = (props) => {
   
   return (
     <div className="EditCreator">
+      
+    <div className="home-button">
+      <Link to="/">Home</Link>
+    </div>
+
     
     <div> 
       Edit Creator
@@ -37,9 +42,9 @@ const Editcreator = (props) => {
     </div>
     <div className="input-container">
       <Texfield fullWidth id="standard-basic" label="Name"value={name} onChange={e=>setName(e.target.value)}/>
-      <Texfield id="standard-basic" label="URL" onChange={e=>setUrl(e.target.value)}/> 
-      <Texfield id="standard-basic" label="Description" onChange={e=>setDescription(e.target.value)} />
-      <Texfield id="standard-basic" label="ImageURL" onChange={e=>setImageURL(e.target.value)} />
+      <Texfield value={url} id="standard-basic" label="URL" onChange={e=>setUrl(e.target.value)}/> 
+      <Texfield value={description} multiline rows={4} maxRows={6} id="standard-basic" label="Description" onChange={e=>setDescription(e.target.value)} />
+      <Texfield value={imageURL} id="standard-basic" label="ImageURL" onChange={e=>setImageURL(e.target.value)} />
        <Link to="/"><Button variant="contained" onClick={()=>handleEditCreator(editId)}>Edit creator</Button></Link>
     </div>
     
