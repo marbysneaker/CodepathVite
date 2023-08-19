@@ -38,9 +38,10 @@ Use Material UI library to improve ui/ux
 ## Video Walkthrough
 
 Here's a walkthrough of implemented required features:
+<a href="https://imgur.com/UAFuuZD"><img src="https://i.imgur.com/UAFuuZD.gif" title="source: imgur.com" /></a>
 
 👉🏿<img src='https://imgur.com/a/rEDXtup' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-gif ('https://imgur.com/a/rEDXtup')
+gif ('https://imgur.com/UAFuuZD')
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with ...  https://www.screentogif.com/
